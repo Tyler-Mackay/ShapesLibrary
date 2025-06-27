@@ -4,6 +4,12 @@ open class Ellipse(center: Point, verticalRadius: Double, horizontalRadius: Doub
     val verticalRadius: Double = verticalRadius
     val horizontalRadius: Double = horizontalRadius
 
+    init {
+        if (verticalRadius <= 0.0 || horizontalRadius <= 0.0) {
+            throw IllegalArgumentException("Radii must be positive")
+        }
+    }
+
     fun area(): Double {
         return kotlin.math.PI * verticalRadius * horizontalRadius
     }

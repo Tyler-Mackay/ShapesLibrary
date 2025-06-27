@@ -10,6 +10,12 @@ open class Rectangle(corner1: Point, corner2: Point) {
     val height: Double
         get() = kotlin.math.abs(corner2.y - corner1.y)
 
+    init {
+        if (width == 0.0 || height == 0.0) {
+            throw IllegalArgumentException("Rectangle width and height must be positive")
+        }
+    }
+
     fun area(): Double {
         return width * height
     }
