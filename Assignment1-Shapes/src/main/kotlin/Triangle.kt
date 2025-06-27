@@ -1,7 +1,14 @@
-class Triangle(var point1: Point, var point2: Point, var point3: Point) {
+class Triangle(point1: Point, point2: Point, point3: Point) {
+    var point1: Point = point1
+        private set
+    var point2: Point = point2
+        private set
+    var point3: Point = point3
+        private set
+
     init {
         if (area() == 0.0) {
-            throw IllegalArgumentException("Points must not be collinear (area cannot be 0)")
+            throw IllegalArgumentException("Area cannot be 0")
         }
     }
 

@@ -1,4 +1,9 @@
-open class Ellipse(var center: Point, var verticalRadius: Double, var horizontalRadius: Double) {
+open class Ellipse(center: Point, verticalRadius: Double, horizontalRadius: Double) {
+    var center: Point = center
+        private set
+    val verticalRadius: Double = verticalRadius
+    val horizontalRadius: Double = horizontalRadius
+
     fun area(): Double {
         return kotlin.math.PI * verticalRadius * horizontalRadius
     }

@@ -1,4 +1,9 @@
-class Line(var point1: Point, var point2: Point) {
+class Line(point1: Point, point2: Point) {
+    var point1: Point = point1
+        private set
+    var point2: Point = point2
+        private set
+
     val length: Double
         get() = kotlin.math.sqrt((point2.x - point1.x) * (point2.x - point1.x) + 
                                (point2.y - point1.y) * (point2.y - point1.y))

@@ -1,7 +1,11 @@
-class Point(var x: Double, var y: Double) {
+class Point(x: Double, y: Double) {
+    var x: Double = x
+        private set
+    var y: Double = y
+        private set
+
     fun clone(): Point {
-        val pointClone = Point(x, y)
-        return pointClone
+        return Point(x, y)
     }
 
     fun move(deltaX: Double, deltaY: Double) {
