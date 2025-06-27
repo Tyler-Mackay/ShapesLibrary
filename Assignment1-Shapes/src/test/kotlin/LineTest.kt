@@ -13,6 +13,16 @@ class LineTest {
     }
     
     @Test
+    fun testLineCreationZeroLengthThrowsException() {
+        val point1 = Point(2.0, 3.0)
+        val point2 = Point(2.0, 3.0) // Same point, zero length
+        
+        assertFailsWith<IllegalArgumentException> {
+            Line(point1, point2)
+        }
+    }
+    
+    @Test
     fun testLength() {
         val point1 = Point(0.0, 0.0)
         val point2 = Point(3.0, 4.0)

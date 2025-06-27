@@ -13,6 +13,36 @@ class RectangleTest {
     }
     
     @Test
+    fun testRectangleCreationZeroWidthThrowsException() {
+        val corner1 = Point(3.0, 1.0)
+        val corner2 = Point(3.0, 5.0) // Same x coordinate, zero width
+        
+        assertFailsWith<IllegalArgumentException> {
+            Rectangle(corner1, corner2)
+        }
+    }
+    
+    @Test
+    fun testRectangleCreationZeroHeightThrowsException() {
+        val corner1 = Point(1.0, 4.0)
+        val corner2 = Point(6.0, 4.0) // Same y coordinate, zero height
+        
+        assertFailsWith<IllegalArgumentException> {
+            Rectangle(corner1, corner2)
+        }
+    }
+    
+    @Test
+    fun testRectangleCreationZeroWidthAndHeightThrowsException() {
+        val corner1 = Point(2.0, 3.0)
+        val corner2 = Point(2.0, 3.0) // Same point, zero width and height
+        
+        assertFailsWith<IllegalArgumentException> {
+            Rectangle(corner1, corner2)
+        }
+    }
+    
+    @Test
     fun testWidth() {
         val corner1 = Point(1.0, 2.0)
         val corner2 = Point(5.0, 7.0)

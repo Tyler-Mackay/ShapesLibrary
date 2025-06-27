@@ -13,6 +13,51 @@ class EllipseTest {
     }
     
     @Test
+    fun testEllipseCreationZeroVerticalRadiusThrowsException() {
+        val center = Point(0.0, 0.0)
+        
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(center, 0.0, 5.0)
+        }
+    }
+    
+    @Test
+    fun testEllipseCreationZeroHorizontalRadiusThrowsException() {
+        val center = Point(0.0, 0.0)
+        
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(center, 5.0, 0.0)
+        }
+    }
+    
+    @Test
+    fun testEllipseCreationNegativeVerticalRadiusThrowsException() {
+        val center = Point(0.0, 0.0)
+        
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(center, -2.0, 5.0)
+        }
+    }
+    
+    @Test
+    fun testEllipseCreationNegativeHorizontalRadiusThrowsException() {
+        val center = Point(0.0, 0.0)
+        
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(center, 5.0, -3.0)
+        }
+    }
+    
+    @Test
+    fun testEllipseCreationBothRadiiZeroThrowsException() {
+        val center = Point(0.0, 0.0)
+        
+        assertFailsWith<IllegalArgumentException> {
+            Ellipse(center, 0.0, 0.0)
+        }
+    }
+    
+    @Test
     fun testArea() {
         val center = Point(0.0, 0.0)
         val ellipse = Ellipse(center, 3.0, 4.0)

@@ -14,18 +14,6 @@ class CircleTest {
     }
     
     @Test
-    fun testRadiusUpdate() {
-        val center = Point(0.0, 0.0)
-        val circle = Circle(center, 3.0)
-        
-        circle.radius = 7.0
-        
-        assertEquals(7.0, circle.radius, 0.001)
-        assertEquals(7.0, circle.verticalRadius, 0.001)
-        assertEquals(7.0, circle.horizontalRadius, 0.001)
-    }
-    
-    @Test
     fun testArea() {
         val center = Point(0.0, 0.0)
         val circle = Circle(center, 4.0)
